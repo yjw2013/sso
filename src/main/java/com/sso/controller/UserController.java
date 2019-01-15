@@ -1,6 +1,7 @@
 package com.sso.controller;
 
 import com.sso.domain.db.User;
+import com.sso.domain.result.SSOResult;
 import com.sso.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,8 +30,7 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public Object register(@RequestBody User user) {
-
-        return null;
+        return userService.register(user);
     }
 
     /**

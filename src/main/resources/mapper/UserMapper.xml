@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sso.domain.db.User">
+<mapper namespace="com.sso.mapper.UserMapper">
     <!-- 配置查询result -->
     <resultMap id="BaseResultMap" type="com.sso.domain.db.User">
         <id column="id" jdbcType="BIGINT" property="id"/>
@@ -11,5 +11,11 @@
         <result column="gmtCreate" jdbcType="TIMESTAMP" property="gmtCreate"/>
         <result column="gmtModified" jdbcType="TIMESTAMP" property="gmtModified"/>
     </resultMap>
+
+    <!-- 新增用户 -->
+    <insert id="save" parameterType="com.sso.domain.db.User">
+        INSERT INTO user (userName, pwd, phone, email, gmtCreate, gmtModified)
+        VALUES (#{userName}, #{pwd}, #{phone}, #{email}, #{gmtCreate}, #{gmtModified});
+    </insert>
 
 </mapper>
