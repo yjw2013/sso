@@ -15,7 +15,7 @@
             <appender-ref ref="Console"/>
         </logger>
 
-        <logger name="com.crawler.mapper" level="debug">
+        <logger name="com.sso.mapper" level="debug">
             <appender-ref ref="Console"/>
         </logger>
 
