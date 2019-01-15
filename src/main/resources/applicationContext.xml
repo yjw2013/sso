@@ -19,7 +19,7 @@
 		<!-- 配置资源文件 -->
 		<property name="locations">
 			<list>
-				<value>classpath:properties/dbconfig.properties</value>
+				<value>classpath:dbconfig.properties</value>
 			</list>
 		</property>
 	</bean>
