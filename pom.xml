@@ -27,6 +27,7 @@
         <aspectj.version>1.8.9</aspectj.version>
         <mongodb.version>1.9.8.RELEASE</mongodb.version>
         <druid.version>1.0.12</druid.version>
+        <jedis.version>2.9.0</jedis.version>
     </properties>
 
     <!-- 引入依赖 -->
@@ -205,6 +206,11 @@
                     <artifactId>jcl-over-slf4j</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
         </dependency>
     </dependencies>
 
