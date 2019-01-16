@@ -12,10 +12,30 @@
         <result column="gmtModified" jdbcType="TIMESTAMP" property="gmtModified"/>
     </resultMap>
 
+    <!-- sql片段 -->
+    <sql id="query_user">
+        id,userName,pwd,phone,email,gmtCreate,gmtModified
+    </sql>
+
     <!-- 新增用户 -->
     <insert id="save" parameterType="com.sso.domain.db.User">
         INSERT INTO user (userName, pwd, phone, email, gmtCreate, gmtModified)
         VALUES (#{userName}, #{pwd}, #{phone}, #{email}, #{gmtCreate}, #{gmtModified});
     </insert>
+
+    <!-- 根据用户名修改密码 -->
+    <update id="update" parameterType="com.sso.domain.db.User">
+        UPDATE
+            user
+        SET
+            pwd = #{pwd},gmtModified = #{gmtModified}
+        WHERE
+            userName = #{userName}
+    </update>
+
+    <!-- 根据用户名查询User是否存在 -->
+    <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT <include refid="query_user"/> WHERE userName = #{userName}
+    </select>
 
 </mapper>

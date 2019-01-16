@@ -20,10 +20,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     public int update(User user) {
-        return 0;
+        return userMapper.update(user);
     }
 
     public User selectByUserName(String userName) {
-        return null;
+        return userMapper.selectByUserName(userName);
     }
 }

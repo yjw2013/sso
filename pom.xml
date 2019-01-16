@@ -28,6 +28,8 @@
         <mongodb.version>1.9.8.RELEASE</mongodb.version>
         <druid.version>1.0.12</druid.version>
         <jedis.version>2.9.0</jedis.version>
+        <commons.version>3.4</commons.version>
+        <commons.codec.version>1.11</commons.codec.version>
     </properties>
 
     <!-- 引入依赖 -->
@@ -211,6 +213,17 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>${jedis.version}</version>
+        </dependency>
+        <!-- Apache工具组件 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons.codec.version}</version>
         </dependency>
     </dependencies>
 
